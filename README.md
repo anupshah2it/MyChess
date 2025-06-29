@@ -16,12 +16,39 @@ MyChess provides a simple online chess experience with integrated AI analysis. I
 - `Flask` web framework
 - Stockfish engine available in your PATH
 
-Install dependencies with:
+## Installation
+
+### Linux
+
+Install Python 3.12 or newer and run:
 
 ```bash
-pip install flask python-chess
 sudo apt-get install stockfish
+pip install flask python-chess
 ```
+
+The engine binary is typically available at `/usr/games/stockfish`, which is the
+default path used in the code.
+
+### Windows
+
+1. Install [Python](https://www.python.org/downloads/) and make sure `pip` is on
+   your PATH.
+2. Install the required libraries:
+
+   ```bash
+   pip install flask python-chess
+   ```
+3. Download a Stockfish build for Windows from <https://stockfishchess.org/> or
+   install it via a package manager such as Chocolatey:
+
+   ```powershell
+   choco install stockfish
+   ```
+4. Update the `STOCKFISH_PATH` constant in `app.py` and `chess_game.py` to
+   point to the location of `stockfish.exe` (e.g. `C:\\Program Files\\Stockfish\\stockfish.exe`).
+
+Use `py` instead of `python` if your system registers the Python launcher.
 
 ## Usage
 
